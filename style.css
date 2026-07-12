@@ -1,0 +1,145 @@
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-size: cover;
+}
+
+.headline {
+    position: relative;
+    top: 6.4cm;
+    left: 14cm;
+    height: 10px;
+    width: 250px;
+    height: 50px;
+    animation: op 5s forwards;
+}
+@keyframes op {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+
+.headline h1 {
+    font-family: sans-serif;
+    color: #afafb2;
+}
+
+.headline h2 {
+    position: relative;
+    top: -2.2cm;
+    color: #aaaaaa;
+    font-family: sans-serif;
+}
+
+.catchline {
+    width: 800px;
+    height: 50px;
+    position: relative;
+    top: 5.3cm;
+    left: 9cm;
+    animation: op 15s forwards;
+    animation-timing-function: ease-in;
+}
+
+.catchline p {
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #050505;
+}
+
+.line {
+    width: 800px;
+    height: 0.2cm;
+    position: relative;
+    top: 6.8cm;
+    left: 7cm;
+    border-radius: 10px;
+    background: transparent;
+        animation: op 20s forwards;
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #000000,#b7b7b7,#525252, #000000);
+    border-radius: 10px;
+    background-size: 300% 300%;
+    animation: colorroted 5s linear infinite;
+}
+
+@keyframes colorroted {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+button {
+    padding: 13px 24px;
+    position: relative;
+    top: 5.3cm;
+    left: 16cm;
+    border: none;
+    border-radius: 999px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4e4f51, #000000);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    animation: op 25s forwards;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #000000, #565759);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* Responsive overrides to avoid fixed cm positioning and center content on small screens */
+@media (max-width: 1200px) {
+    .headline, .catchline, .line, button {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 1.2rem auto !important;
+        width: min(95%, 1000px) !important;
+        text-align: center;
+    }
+
+    .catchline p { font-size: 1rem; }
+
+    .headline h1 { font-size: 1.8rem; }
+    .headline h2 { font-size: 1rem; }
+
+    button { display: inline-block; margin-top: .6rem; }
+}
+
+@media (max-width: 480px) {
+    .headline h1 { font-size: 1.4rem; }
+    .catchline p { font-size: 0.95rem; padding: 8px; }
+    button { padding: 10px 16px; font-size: 14px; }
+    .line { height: 6px; }
+}
+
+/* Ensure hero/background doesn't cause horizontal scrolling */
+html, body { overflow-x: hidden; }

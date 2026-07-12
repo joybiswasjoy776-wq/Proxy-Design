@@ -1,0 +1,210 @@
+body {
+    margin: 10px;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(6, 20, 42, 0.4)), url('aboutbackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+/* *{
+    margin: 10px;
+    padding: 10px;
+} */
+.into {
+    position: relative;
+    top: 1cm;
+    width: min(900px, calc(100% - 2rem));
+    margin: 5.5rem auto 1.5rem;
+    text-align: center;
+    color: #ffa200e6;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.about-card {
+    position: relative;
+    top: 2cm;
+    width: min(900px, calc(100% - 2rem));
+    margin: 0 auto 2rem;
+    padding: 30px 35px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 22px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    color: #f5f5f5;
+    line-height: 1.8;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.about-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 191, 77, 0.12), transparent 55%);
+    z-index: -1;
+}
+
+.about-card h2 {
+    margin: 0 0 14px;
+    color: #ffbf4d;
+    font-size: 1.8rem;
+}
+
+.about-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+
+
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    box-shadow: 5px 5px 15px inset #222;
+    backdrop-filter: blur(20px);
+    padding: 15px 30px;
+    position: fixed;
+    top: 20px;
+    left: 210px;
+    width: 25cm;
+    border-radius: 15px;
+    background-color: #00000000;
+    
+}
+
+.logo a {
+    color: rgb(255, 253, 253);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: rgb(0, 115, 255);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width:768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #222;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+.active {
+    color: rgb(0, 136, 255);
+    border-bottom: 2px solid rgb(0, 157, 255);
+}
+
+/* Stats section */
+.stats{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 1100px;
+    margin: 3.5cm 2cm 2cm 2cm;
+    padding: 18px;
+}
+
+.stat{
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    color: #fffdef;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+}
+
+.stat-number{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 34px;
+    font-weight:700;
+    color: #e6f2ff;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.stat-label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.86);
+    text-align:center;
+}
+
+@media (max-width: 960px){
+    .stats{grid-template-columns: repeat(2,1fr); max-width: 760px; margin-top:4cm}
+}
+
+@media (max-width: 520px){
+    .stats{grid-template-columns: 1fr; gap:12px; margin: 2.5cm 16px}
+    .about-card{left:0; top:3.5cm; width: calc(100% - 32px)}
+    .into{left:1cm; top:2cm; width: calc(100% - 32px)}
+    .navbar{left:12px; width: calc(100% - 24px)}
+}
+
+/* Additional responsive cleanups */
+@media (max-width:768px){
+    .about-card{position:static; margin: 1.5rem; width: calc(100% - 32px);}
+    .into{position:static; margin-top:1.5rem}
+    .stats{margin-top:1.5rem}
+    .navbar{left:50%; transform:translateX(-50%); width:calc(100% - 40px);}
+}
+
+@media (max-width:480px){
+    .about-card{padding:16px}
+    .stat-number{font-size:24px}
+}
